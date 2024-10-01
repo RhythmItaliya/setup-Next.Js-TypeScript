@@ -1,17 +1,17 @@
 {
-  "name": "nextjs-typescript-starter",
+  "name": "start-up",
   "description": "A Next.js starter with TypeScript, Tailwind CSS, and robust linting.",
   "version": "0.1.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gregrickaby/nextjs-typescript-starter.git"
+    "url": "git+https://github.com/rhythmitaliya/start-up.git"
   },
-  "author": "Greg Rickaby <gregrickaby@gmail.com>",
+  "author": "Rhythm Italiya <rhythmitaliya@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gregrickaby/nextjs-typescript-starter/issues"
+    "url": "https://github.com/rhythmitaliya/start-up/issues"
   },
-  "homepage": "https://github.com/gregrickaby/nextjs-typescript-starter#readme",
+  "homepage": "https://github.com/rhythmitaliya/start-up#readme",
   "private": true,
   "scripts": {
     "build": "next build",
