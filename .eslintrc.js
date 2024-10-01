@@ -1,3 +1,5 @@
+const isDev = process.env.NODE_ENV === 'development'
+
 module.exports = {
   env: {
     browser: true,
@@ -20,7 +22,8 @@ module.exports = {
       }
     }
   },
-  plugins: ['prettier', 'jsdoc'],
+  plugins: ['prettier', 'jsdoc', '@typescript-eslint'],
+  parser: '@typescript-eslint/parser',
   rules: {
     'jsdoc/check-indentation': 'warn',
     'jsdoc/require-param': 'off',
@@ -43,7 +46,17 @@ module.exports = {
       }
     ],
     'jsx-a11y/anchor-is-valid': 'off',
-    'no-console': ['error', {allow: ['warn', 'error']}],
-    'prettier/prettier': 'error'
-  }
+    'no-console': isDev ? 'off' : 'error', // Allow console in development mode
+    'prettier/prettier': 'error',
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': ['warn']
+  },
+  overrides: [
+    {
+      files: ['src/utils/log/logger.ts'],
+      rules: {
+        'no-console': 'off'
+      }
+    }
+  ]
 }

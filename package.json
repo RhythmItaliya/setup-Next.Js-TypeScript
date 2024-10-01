@@ -14,15 +14,15 @@
   "homepage": "https://github.com/rhythmitaliya/start-up#readme",
   "private": true,
   "scripts": {
-    "build": "next build",
     "dev": "rimraf .next && next dev",
+    "build": "NODE_ENV=production next build",
+    "start": "NODE_ENV=production next start",
     "format": "npx prettier '**/*.{js,jsx,ts,tsx,md,mdx,html,css,scss,json,yml}' --config=.prettierrc.js --write || true",
-    "lint": "npm run format && npm run lint:js && npm run lint:css && npm run lint:md && npm run type-check",
     "lint:css": "npx stylelint '**/*.css' --config=.stylelintrc.js --fix || true",
     "lint:js": "npx eslint '**/*.{js,ts,jsx,tsx}' --fix || true && next lint",
     "lint:md": "npx markdownlint '**/*.{md,mdx}' --fix",
-    "start": "next start",
-    "type-check": "tsc"
+    "type-check": "tsc",
+    "lint": "npm run format && npm run lint:js && npm run lint:css && npm run lint:md && npm run type-check"
   },
   "dependencies": {
     "classnames": "^2.5.1",
@@ -36,8 +36,8 @@
     "autoprefixer": "^10.4.20",
     "eslint": "^8.57.0",
     "eslint-config-next": "^14.2.13",
-    "eslint-plugin-jsdoc": "^50.3.0",
     "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-jsdoc": "^50.3.0",
     "eslint-plugin-prettier": "^5.2.1",
     "markdownlint": "^0.35.0",
     "markdownlint-cli": "^0.42.0",

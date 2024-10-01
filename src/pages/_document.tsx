@@ -8,7 +8,6 @@ import Document, {
 
 /**
  * Render a custom Document component.
- *
  * @return {Element} Custom Document component.
  */
 export default class MyDocument extends Document {
