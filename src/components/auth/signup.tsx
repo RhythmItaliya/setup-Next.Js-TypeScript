@@ -1,24 +1,24 @@
 // src/components/auth/signup.tsx
-import {useRouter} from 'next/router'
-import React, {useState} from 'react'
-import {useAuth} from '../../context/AuthContext'
-import {log} from '../../utils/log/logger' // Import the logger
+import { useRouter } from 'next/router';
+import React, { useState } from 'react';
+import { useAuth } from '~/src/context/AuthContext';
+import { log } from '~/src/utils/log/logger';
 
 const Signup: React.FC = () => {
   const [username, setUsername] = useState('')
   const router = useRouter()
-  const {login} = useAuth() // Use the login function
+  const { login } = useAuth()
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    log('Signing up with username:', username) // Use the logger instead of console.log
+    log('Signing up with username:', username)
 
     try {
       // Implement signup logic here
-      await login(username) // Assuming login is a function that accepts a username
+      await login(username)
       router.push('/')
     } catch (error) {
-      log('Signup failed:', error) // Log the error if signup fails
+      log('Signup failed:', error)
     }
   }
 

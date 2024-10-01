@@ -1,24 +1,23 @@
 // src/components/auth/login.tsx
-import {useRouter} from 'next/router'
-import React, {useState} from 'react'
-import {useAuth} from '../../context/AuthContext'
-import {log} from '../../utils/log/logger' // Import the logger
+import { useRouter } from 'next/router';
+import React, { useState } from 'react';
+import { useAuth } from '~/src/context/AuthContext';
+import { log } from '~/src/utils/log/logger';
 
 const Login: React.FC = () => {
   const [username, setUsername] = useState('')
   const router = useRouter()
-  const {login} = useAuth()
+  const { login } = useAuth()
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     log('Logging in with username:', username)
 
     try {
-      await login(username) // Assuming login returns a promise
+      await login(username)
       router.push('/')
     } catch (error) {
-      log('Login failed:', error) // Log the error
-      // Optionally show an error message to the user
+      log('Login failed:', error)
     }
   }
 
